@@ -1,0 +1,33 @@
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+.image-slider {
+  display: flex;
+  animation: slide 15s infinite;
+}
+
+.image-slider > div {
+  flex-shrink: 0;
+  width: 100%;
+  height: 400px;
+}
+
+.image-slider img {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}

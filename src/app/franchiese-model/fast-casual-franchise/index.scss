@@ -1,0 +1,57 @@
+/* Hide the radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Default state for slider images */
+.slider-image {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+/* When the radio button is checked, show the corresponding image */
+input[type="radio"]:nth-of-type(1):checked ~ .slider-container .slider-image:nth-of-type(1),
+input[type="radio"]:nth-of-type(2):checked ~ .slider-container .slider-image:nth-of-type(2),
+input[type="radio"]:nth-of-type(3):checked ~ .slider-container .slider-image:nth-of-type(3),
+input[type="radio"]:nth-of-type(4):checked ~ .slider-container .slider-image:nth-of-type(4) {
+  opacity: 1;
+}
+
+/* Styling for the arrows */
+.slider-arrow {
+  display: inline-block;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* Left Arrow */
+.left-arrow {
+  left: 1rem;
+}
+
+/* Right Arrow */
+.right-arrow {
+  right: 1rem;
+}
+
+/* Dots navigation */
+input[type="radio"]:nth-of-type(1):checked ~ .slider-container .slider-dot:nth-of-type(1),
+input[type="radio"]:nth-of-type(2):checked ~ .slider-container .slider-dot:nth-of-type(2),
+input[type="radio"]:nth-of-type(3):checked ~ .slider-container .slider-dot:nth-of-type(3),
+input[type="radio"]:nth-of-type(4):checked ~ .slider-container .slider-dot:nth-of-type(4) {
+  background-color: white;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,178 @@
+@use "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Geist";
+}
+
+/* .back-button: Hides the back button on mobile */
+.back-button {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  z-index: 999;
+}
+
+@media (max-width: 767px) {
+  .back-button {
+    display: none;
+  }
+}
+
+#fixed-social {
+  position: fixed;
+  top: 130px;
+  z-index: 999;
+}
+
+/* Hide fixed social icons on mobile */
+@media (max-width: 767px) {
+  #fixed-social {
+    display: none;
+  }
+}
+#fixed-social a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 1px;
+  transition: left 0.5s, opacity 0.5s;
+}
+
+#fixed-social a:hover > span {
+  visibility: visible;
+  left: 41px;
+  opacity: 1;
+}
+
+#fixed-social a span {
+  line-height: 40px;
+  left: 60px;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#fixed-social .fixed-facebook {
+  background-color: #00aae5;
+}
+
+#fixed-social .fixed-twitter {
+  background-color: #7d3895;
+}
+
+#fixed-social .fixed-instagrem {
+  background-color: #ed2b29;
+}
+
+/* Button Styles */
+.button-pink {
+  background-color: #9f0712;
+  padding: 0.576rem 1rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Grass image position */
+.grass-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+/* Tick icon styles */
+.tick-icon {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background-color: #efefef;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tick-icon svg {
+  color: #991b1b;
+  font-size: 12px;
+}
+
+.modern .tick-icon svg {
+  color: #016630;
+}
+
+/* Responsive Values Area */
+.values-area {
+  column-count: 2;
+  column-gap: 8px;
+}
+
+@media (max-width: 1024px) {
+  .header-inner {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .back-button {
+    display: none;
+  }
+
+  .values-area {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .form-area h2 {
+    font-size: 18px !important;
+  }
+}
+
+/* Cursor pointer style for interactive elements */
+.cursor-pointer {
+  cursor: pointer !important;
+}
